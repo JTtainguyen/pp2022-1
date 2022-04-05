@@ -91,23 +91,6 @@ class Mark:
     def displayStudentMark(self, studentName):
         print("Student Id: {}, Student Name: {}, Student Mark: {} ".format(self.studentId, studentName, self.grade))
 
-def showMarkInformationForSpecificCourse(courseName, students, courses, grades):
-    courseId = 0
-    for i in range(len(courses)):
-        if (courses[i].get_course_name() == courseName):
-            courseId = courses[i].get_course_id()
-            print("CourseId: ", courseId)
-            break
-
-    for j in range(len(grades)):
-        if int(grades[j].get_course_id()) == int(courseId):
-            for k in range(len(students)):
-                if int(students[k].get_student_id()) == int(grades[j].get_student_id()):
-                    grades[j].displayStudentMark(students[k].get_name())
-                    break
-
-
-
 def showMarkInformationForSpecificCourse(courseName, students, courses, grades, stdscr):
     courseId = ""
     studentName = ""
